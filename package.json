@@ -3,5 +3,5 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": { "@pyrx/synapse": "latest" },
-  "devDependencies": { "typescript": "^5.0.0", "@vercel/node": "^3.0.0", "@types/node": "^20.0.0" }
+  "devDependencies": { "typescript": "^5.0.0", "@vercel/node": "^3.0.0", "@types/node": "^20.0.0", "tsx": "^4.0.0" }
 }

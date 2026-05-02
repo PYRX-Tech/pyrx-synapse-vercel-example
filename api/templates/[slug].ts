@@ -6,6 +6,6 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   if (req.method === 'GET') return res.json(await synapse.templates.get(slug));
   if (req.method === 'PUT') return res.json(await synapse.templates.update(slug, req.body));
   if (req.method === 'DELETE') { await synapse.templates.delete(slug); return res.json({ success: true }); }
-  if (req.method === 'POST') return res.json(await synapse.templates.preview(slug, { attributes: req.body.attributes }));
+  if (req.method === 'POST') return res.json(await synapse.templates.preview(slug, req.body));
   res.status(405).end();
 };

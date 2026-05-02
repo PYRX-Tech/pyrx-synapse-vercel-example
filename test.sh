@@ -7,12 +7,12 @@ BASE_URL="http://localhost:4008"
 echo "Installing..."
 npm install > /dev/null 2>&1
 
-echo "Starting Vercel dev on port 4008..."
-npx vercel dev --listen 4008 > /dev/null 2>&1 &
+echo "Starting local Vercel test server on port 4008..."
+npx tsx _test-server.mjs > /dev/null 2>&1 &
 SERVER_PID=$!
 trap "kill $SERVER_PID 2>/dev/null; wait $SERVER_PID 2>/dev/null" EXIT
 
-wait_for_server "$BASE_URL" 20 || exit 1
+wait_for_server "$BASE_URL" 15 || exit 1
 echo "Server ready. Running tests..."
 run_tests_standard
 print_results
